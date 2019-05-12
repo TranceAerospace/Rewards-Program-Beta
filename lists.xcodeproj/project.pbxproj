@@ -14,6 +14,9 @@
 		EF2EC5912282F29200CBCD49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2EC58F2282F29200CBCD49 /* LaunchScreen.storyboard */; };
 		EF2EC59C2282F29200CBCD49 /* listsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC59B2282F29200CBCD49 /* listsTests.swift */; };
 		EF2EC5A72282F29200CBCD49 /* listsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5A62282F29200CBCD49 /* listsUITests.swift */; };
+		EF2EC5B52282FCCC00CBCD49 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */; };
+		EF2EC5B7228312E100CBCD49 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5B6228312E100CBCD49 /* Customer.swift */; };
+		EFE7931122875FB0006DF37B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7931022875FB0006DF37B /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		EF2EC5A22282F29200CBCD49 /* listsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = listsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2EC5A62282F29200CBCD49 /* listsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listsUITests.swift; sourceTree = "<group>"; };
 		EF2EC5A82282F29200CBCD49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		EF2EC5B6228312E100CBCD49 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		EFE7931022875FB0006DF37B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,12 @@
 		EF2EC5852282F29100CBCD49 /* lists */ = {
 			isa = PBXGroup;
 			children = (
-				EF2EC5862282F29100CBCD49 /* AppDelegate.swift */,
-				EF2EC5882282F29100CBCD49 /* ViewController.swift */,
 				EF2EC58A2282F29100CBCD49 /* Main.storyboard */,
+				EF2EC5882282F29100CBCD49 /* ViewController.swift */,
+				EFE7931022875FB0006DF37B /* EditViewController.swift */,
+				EF2EC5B6228312E100CBCD49 /* Customer.swift */,
+				EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */,
+				EF2EC5862282F29100CBCD49 /* AppDelegate.swift */,
 				EF2EC58D2282F29200CBCD49 /* Assets.xcassets */,
 				EF2EC58F2282F29200CBCD49 /* LaunchScreen.storyboard */,
 				EF2EC5922282F29200CBCD49 /* Info.plist */,
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE7931122875FB0006DF37B /* EditViewController.swift in Sources */,
+				EF2EC5B52282FCCC00CBCD49 /* CustomTableViewCell.swift in Sources */,
 				EF2EC5892282F29100CBCD49 /* ViewController.swift in Sources */,
 				EF2EC5872282F29100CBCD49 /* AppDelegate.swift in Sources */,
+				EF2EC5B7228312E100CBCD49 /* Customer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
