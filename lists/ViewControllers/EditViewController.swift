@@ -34,12 +34,41 @@ class EditViewController: UIViewController {
         currentPointsField.text = String(presentCustomer.numOfPoints)
     }
     @IBAction func minusOneTapped(_ sender: Any) {
+        presentCustomer.numOfPoints -= 1
+        updateFields()
+    }
+    @IBAction func minusFiveTapped(_ sender: Any) {
+        presentCustomer.numOfPoints -= 4
+        updateFields()
     }
     
+    @IBAction func minusTenTapped(_ sender: Any) {
+        presentCustomer.numOfPoints -= 9
+        updateFields()
+    }
     @IBAction func plusOneTapped(_ sender: Any) {
+        presentCustomer.numOfPoints += 1
+        updateFields()
+    }
+    @IBAction func plusFiveTapped(_ sender: Any) {
+        presentCustomer.numOfPoints += 4
+        updateFields()
+    }
+    @IBAction func plusTenTapped(_ sender: Any) {
+        presentCustomer.numOfPoints += 9
+        updateFields()
     }
     @IBAction func resetPointsTapped(_ sender: Any) {
+        print("Reset Points : Reward Issued ")
+        presentCustomer.numOfPoints = 0
+        updateFields()
     }
+    @IBAction func saveTapped(_ sender: Any) {
+        
+        
+    navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

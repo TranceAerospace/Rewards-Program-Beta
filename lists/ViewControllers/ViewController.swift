@@ -9,14 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // data variable start
-    private var data : [String] = []
-    //tableView outlet connection from storyboard to view controller
-    
-    
+
     private var customerData : [Customer] = [newCustomer,secondCustomer,thirdCustomer];
-    
-    
     @IBOutlet weak var tablieview: UITableView!
     
     override func viewDidLoad() {
@@ -34,6 +28,12 @@ class ViewController: UIViewController {
         if (segue.identifier == "toEditFromMaster"){
             let s = segue.destination as! EditViewController
             s.presentCustomer = customerData[sender as! Int]
+            s.navigationItem.title = "Edit Customer Data"
+        }
+        
+        if (segue.identifier == "toAddFromMaster"){
+            let s = segue.destination as! AddViewController
+            s.segueString = "toAddFromMaster"
         }
     }
 }
@@ -62,3 +62,4 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "toEditFromMaster", sender: indexPath.row)
     }
 }
+
