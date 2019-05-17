@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var customCellLabel: UILabel!
@@ -25,11 +25,18 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     // This function sets the custom cells labels based off of the customer object that is passed in
-    func setLabels(data:Customer){
+    func setLabels(data:NSManagedObject){
         //Email
-        self.customCellLabel.text = data.emailAddress
-        self.nameLabel.text = data.name
-        self.pointsLabel.text = String(data.numOfPoints)
+        
+        guard let email = data.value(forKey: "emailAddress"), let name = data.value(forKey: "name"), let points = data.value(forKey: "numOfPoints")
+            else {
+                print("value is nil")
+                return
+        }
+        self.customCellLabel.text = email as? String
+        self.nameLabel.text = name as? String
+        self.pointsLabel.text = points as? String
+
     }
 
 }

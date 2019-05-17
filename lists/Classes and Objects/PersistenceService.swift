@@ -60,5 +60,19 @@ class PersistenceService {
             }
         }
     }
-
+    static func getCustomers() -> [NSManagedObject] {
+        var coreCustomers : [NSManagedObject] = []
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Customers")
+        do {
+            coreCustomers = try PersistenceService.context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+        return coreCustomers
+    }
+    
+//    static func createNewCustomer(with name : String, with email : String) {
+//
+//    }
+    
 }

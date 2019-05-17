@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     /*
@@ -20,6 +21,10 @@ class ViewController: UIViewController {
     private var customerData : [Customer] = [newCustomer,secondCustomer,thirdCustomer];
     @IBOutlet weak var tablieview: UITableView!
     
+    
+    var coreCustomers : [NSManagedObject] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,13 +33,14 @@ class ViewController: UIViewController {
         tablieview.delegate = self
         self.navigationItem.title = "Pickle Me Pete's Rewards Program"
         
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.navigationItem.title = nil
         
         if (segue.identifier == "toEditFromMaster"){
             let s = segue.destination as! EditViewController
-            s.presentCustomer = customerData[sender as! Int]
+            s.selectedIndex = sender as! Int
             s.navigationItem.title = "Edit Customer Data"
         }
         
@@ -45,6 +51,16 @@ class ViewController: UIViewController {
         }
     }
 }
+ // Core Data
+extension ViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        coreCustomers = PersistenceService.getCustomers()
+        tablieview.reloadData()
+        print(coreCustomers[0].value(forKey: "numOfPoints"))
+    }
+    
+}
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     // Number of different sections.
@@ -53,13 +69,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerData.count
+        return coreCustomers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tablieview.dequeueReusableCell(withIdentifier: "cellRI") as! CustomTableViewCell
         // Since cell is a CustomerTableViewCell it inherits the setLabels(data: Customer) method. 
-        cell.setLabels(data: customerData[indexPath.row])
+        cell.setLabels(data: coreCustomers[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

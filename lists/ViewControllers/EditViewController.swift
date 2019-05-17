@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class EditViewController: UIViewController {
     
-    var presentCustomer = Customer(customerFullName: "", customerFirstPhoneNumber: "", customerSecondPhoneNumber: "", currentNumberOfPoints: 0, customerEmailAddress: "")
-    
+    var selectedIndex : Int = 0
+    var currentCustomers : [NSManagedObject] = []
+
     @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var phoneOneField: UITextField!
@@ -21,46 +23,49 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        currentCustomers = PersistenceService.getCustomers()
         // Do any additional setup after loading the view.
         updateFields()
+
         
     }
     func updateFields(){
-        fullNameField.text = presentCustomer.name
-        emailAddressField.text = presentCustomer.emailAddress
-        phoneOneField.text = presentCustomer.phoneNumberOne
-        phoneTwoField.text = presentCustomer.phoneNumberTwo
-        currentPointsField.text = String(presentCustomer.numOfPoints)
+        
+        fullNameField.text = currentCustomers[selectedIndex].value(forKey: "name") as? String
+        emailAddressField.text = currentCustomers[selectedIndex].value(forKey: "emailAddress") as? String
+        phoneOneField.text = currentCustomers[selectedIndex].value(forKey: "phoneNumberOne") as? String
+        phoneTwoField.text = currentCustomers[selectedIndex].value(forKey: "phoneNumberTwo") as? String
+        currentPointsField.text = currentCustomers[selectedIndex].value(forKey: "numOfPoints") as? String
     }
     @IBAction func minusOneTapped(_ sender: Any) {
-        presentCustomer.numOfPoints -= 1
+//        currentCustomers[selectedIndex].numOfPoints -= 1
         updateFields()
     }
     @IBAction func minusFiveTapped(_ sender: Any) {
-        presentCustomer.numOfPoints -= 4
+//        currentCustomers[selectedIndex].numOfPoints -= 4
         updateFields()
     }
     
     @IBAction func minusTenTapped(_ sender: Any) {
-        presentCustomer.numOfPoints -= 9
+//        currentCustomers[selectedIndex].numOfPoints -= 9
         updateFields()
     }
     @IBAction func plusOneTapped(_ sender: Any) {
-        presentCustomer.numOfPoints += 1
+//        currentCustomers[selectedIndex].numOfPoints += 1
         updateFields()
     }
     @IBAction func plusFiveTapped(_ sender: Any) {
-        presentCustomer.numOfPoints += 4
+//        currentCustomers[selectedIndex].numOfPoints += 4
         updateFields()
     }
     @IBAction func plusTenTapped(_ sender: Any) {
-        presentCustomer.numOfPoints += 9
+//        currentCustomers[selectedIndex].numOfPoints += 9
         updateFields()
     }
     @IBAction func resetPointsTapped(_ sender: Any) {
         print("Reset Points : Reward Issued ")
-        presentCustomer.numOfPoints = 0
+//        currentCustomers[selectedIndex].numOfPoints = 0
         updateFields()
     }
     @IBAction func saveTapped(_ sender: Any) {

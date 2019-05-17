@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddViewController: UIViewController {
     
@@ -27,17 +28,37 @@ class AddViewController: UIViewController {
         print(segueString)
     }
     
-    func createNewCustomer(custName : String){
+    func createNewCustomer(){
         /*
          Create a new customer object
         */
+        guard let entityFromContext = NSEntityDescription.entity(forEntityName: "Customers", in: PersistenceService.persistentContainer.viewContext)
+            else {
+                print("Error unwrapping")
+                return
+        }
+        
+        let name = fullNameField.text
+        let emailAddress = emailAddressField.text
+        let phoneOne = phoneNumberOneField.text
+        let phoneTwo = phoneNumberTwoField.text
+        let points = Int(currentPointsField.text!)
+
+        let person = NSManagedObject(entity: entityFromContext, insertInto: PersistenceService.persistentContainer.viewContext)
+        person.setValue(name, forKey: "name")
+        person.setValue(emailAddress, forKey: "emailAddress")
+        person.setValue(phoneOne, forKey: "phoneNumberOne")
+        person.setValue(phoneTwo, forKey: "phoneNumberTwo")
+        person.setValue(points, forKey: "numOfPoints")
+        PersistenceService.saveContext()
+        
     }
     
     @IBAction func saveTapped(_ sender: Any) {
         
         
         //Save to core data
-        
+        createNewCustomer()
         //return to root controller
         navigationController?.popToRootViewController(animated: true)
     }
