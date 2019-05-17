@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    /*
+     newCustomer, secondCustomer and thirdCustomer are defined in Customer.Swift
+     Ideally this data would be the return of a core data fetch request.
+     Something like,
+     private var customerData = fetchCustomerData()
+     where,
+     func fetchCustomerData() -> [Customer]
+     */
     private var customerData : [Customer] = [newCustomer,secondCustomer,thirdCustomer];
     @IBOutlet weak var tablieview: UITableView!
     
@@ -33,7 +40,8 @@ class ViewController: UIViewController {
         
         if (segue.identifier == "toAddFromMaster"){
             let s = segue.destination as! AddViewController
-            s.segueString = "toAddFromMaster"
+            s.navigationItem.title = "Add A New Customer!"
+            s.segueString = "Add View Controller"
         }
     }
 }
@@ -50,7 +58,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tablieview.dequeueReusableCell(withIdentifier: "cellRI") as! CustomTableViewCell
-        // Set labels
+        // Since cell is a CustomerTableViewCell it inherits the setLabels(data: Customer) method. 
         cell.setLabels(data: customerData[indexPath.row])
         return cell
     }
@@ -60,6 +68,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toEditFromMaster", sender: indexPath.row)
+        
+        //Removes highlighting. 
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

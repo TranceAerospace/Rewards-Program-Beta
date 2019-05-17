@@ -30,6 +30,8 @@ class Customer{
         print("Reset customer rewards points from \(prevPoints) to \(self.numOfPoints)")
     }
 }
-var newCustomer = Customer(customerFullName: "Dom Gallo", customerFirstPhoneNumber: "6316721260", customerSecondPhoneNumber: nil, currentNumberOfPoints: 420, customerEmailAddress: "dgallo519@gmail.com")
-var secondCustomer = Customer(customerFullName: "Andrew Novello", customerFirstPhoneNumber: "631-666-6642", customerSecondPhoneNumber: nil, currentNumberOfPoints: 42069, customerEmailAddress: "anovello@gmail.com")
-var thirdCustomer = Customer(customerFullName: "Juliana Marko-Gallo", customerFirstPhoneNumber: "850-532-4845", customerSecondPhoneNumber: nil, currentNumberOfPoints: 420, customerEmailAddress: "markojuliana@yahoo.com")
+
+// Hard Coded Test Data
+var newCustomer = Customer(customerFullName: "Dom Gallo", customerFirstPhoneNumber: "255-666-4521", customerSecondPhoneNumber: nil, currentNumberOfPoints: 420, customerEmailAddress: "domsEmail@gmail.com")
+var secondCustomer = Customer(customerFullName: "Andrew lastName", customerFirstPhoneNumber: "456-321-123", customerSecondPhoneNumber: nil, currentNumberOfPoints: 42069, customerEmailAddress: "andrewsEmail@gmail.com")
+var thirdCustomer = Customer(customerFullName: "Juliana differentLastName", customerFirstPhoneNumber: "123-465-654", customerSecondPhoneNumber: nil, currentNumberOfPoints: 420, customerEmailAddress: "julianasEmail@yahoo.com")

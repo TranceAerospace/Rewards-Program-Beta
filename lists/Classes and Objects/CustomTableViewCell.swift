@@ -24,7 +24,7 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    // This function sets the custom cells labels based off of the customer object that is passed in
     func setLabels(data:Customer){
         //Email
         self.customCellLabel.text = data.emailAddress

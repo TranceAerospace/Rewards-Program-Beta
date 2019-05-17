@@ -9,7 +9,16 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    
+    
+    // Testing to see if prepareForSegue from master is properly sending over information
     var segueString : String = ""
+    
+    @IBOutlet weak var fullNameField: UITextField!
+    @IBOutlet weak var emailAddressField: UITextField!
+    @IBOutlet weak var phoneNumberOneField: UITextField!
+    @IBOutlet weak var phoneNumberTwoField: UITextField!
+    @IBOutlet weak var currentPointsField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +27,21 @@ class AddViewController: UIViewController {
         print(segueString)
     }
     
-
+    func createNewCustomer(custName : String){
+        /*
+         Create a new customer object
+        */
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        
+        
+        //Save to core data
+        
+        //return to root controller
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
