@@ -186,28 +186,12 @@
                                     <action selector="minusOneTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="B2R-Di-7sP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-LI-lx2">
-                                <rect key="frame" x="651" y="102" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="q4B-d9-Xpe"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember To Save Changes Before Returning." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTH-hA-Rrx">
-                                <rect key="frame" x="536" y="66" width="464" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raz-3D-8wl">
                                 <rect key="frame" x="238" y="321" width="55" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="-5"/>
                                 <connections>
                                     <action selector="minusFiveTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="uv2-1h-n0S"/>
-                                    <action selector="minusOneTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="GEA-cC-efd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGE-89-Yo0">
@@ -215,7 +199,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="-10"/>
                                 <connections>
-                                    <action selector="minusOneTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="Cnq-Cg-2XK"/>
                                     <action selector="minusTenTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="6Ra-83-WUY"/>
                                 </connections>
                             </button>
@@ -225,7 +208,6 @@
                                 <state key="normal" title="+5"/>
                                 <connections>
                                     <action selector="plusFiveTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="o0u-O4-yJA"/>
-                                    <action selector="plusOneTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="rMM-DV-z3I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-IG-oMG">
@@ -233,7 +215,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+10"/>
                                 <connections>
-                                    <action selector="plusOneTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="Uxo-L6-hja"/>
                                     <action selector="plusTenTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="mz2-9S-WJ7"/>
                                 </connections>
                             </button>
@@ -243,6 +224,14 @@
                                 <state key="normal" title="Reset Points"/>
                                 <connections>
                                     <action selector="resetPointsTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="2gd-Fi-RaN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-3V-8z3">
+                                <rect key="frame" x="654" y="102" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save New Information."/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="JHK-AD-wew" eventType="touchUpInside" id="SAy-mA-eaQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -260,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4WL-4O-xUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="116"/>
+            <point key="canvasLocation" x="1923.6328124999998" y="115.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hm7-vr-1Ka">
@@ -358,21 +347,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-CM-fUw">
-                                <rect key="frame" x="651" y="102" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oME-fa-Z96">
+                                <rect key="frame" x="620" y="98" width="223" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save New Customer"/>
                                 <connections>
-                                    <action selector="saveTapped:" destination="dNh-iY-Q0S" eventType="touchUpInside" id="paV-dM-5GF"/>
+                                    <action selector="saveTapped:" destination="dNh-iY-Q0S" eventType="touchUpInside" id="0o2-T0-mO8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember To Save Before Returning." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-WZ-lOZ">
-                                <rect key="frame" x="536" y="66" width="369" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fkY-Sh-GCq"/>
@@ -387,10 +369,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WZ-kn-iss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-628"/>
+            <point key="canvasLocation" x="1923.6328124999998" y="-628.125"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="AlV-HI-Xh2">
+            <objects>
+                <viewController id="i2a-sU-hRy" customClass="LoginViewController" customModule="lists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zl2-Qf-PS1">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woodBG1" translatesAutoresizingMaskIntoConstraints="NO" id="w4E-aJ-nxX">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colorLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gVc-d5-MgA">
+                                <rect key="frame" x="328" y="68" width="368" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7ZC-Is-ndt" firstAttribute="trailing" secondItem="w4E-aJ-nxX" secondAttribute="trailing" id="43G-mh-Cgv"/>
+                            <constraint firstItem="7ZC-Is-ndt" firstAttribute="bottom" secondItem="w4E-aJ-nxX" secondAttribute="bottom" id="JHd-vh-AlO"/>
+                            <constraint firstItem="w4E-aJ-nxX" firstAttribute="top" secondItem="7ZC-Is-ndt" secondAttribute="top" id="dbs-s3-tHo"/>
+                            <constraint firstItem="w4E-aJ-nxX" firstAttribute="leading" secondItem="7ZC-Is-ndt" secondAttribute="leading" id="viq-mf-ICi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7ZC-Is-ndt"/>
+                    </view>
+                    <connections>
+                        <outlet property="woodBGImageView" destination="w4E-aJ-nxX" id="hMN-6f-aVg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOo-nK-0yX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80.859375" y="-628.125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="colorLogo" width="775" height="257"/>
+        <image name="woodBG1" width="512" height="301"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qFO-Hc-qbY"/>
+        <segue reference="MrM-rn-5Ej"/>
     </inferredMetricsTieBreakers>
 </document>

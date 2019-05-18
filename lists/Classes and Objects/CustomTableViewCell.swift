@@ -35,7 +35,7 @@ class CustomTableViewCell: UITableViewCell {
         }
         self.customCellLabel.text = email as? String
         self.nameLabel.text = name as? String
-        self.pointsLabel.text = points as? String
+        self.pointsLabel.text = "\(points)"
 
     }
 

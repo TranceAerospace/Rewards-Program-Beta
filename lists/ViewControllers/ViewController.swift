@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         // Allow the view controller to become the datasource for the table view
         tablieview.dataSource = self;
         tablieview.delegate = self
-        self.navigationItem.title = "Pickle Me Pete's Rewards Program"
+
         
         
     }
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
 extension ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Pickle Me Pete's Rewards Program"
         coreCustomers = PersistenceService.getCustomers()
         tablieview.reloadData()
-        print(coreCustomers[0].value(forKey: "numOfPoints"))
     }
     
 }

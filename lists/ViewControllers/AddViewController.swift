@@ -27,6 +27,14 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
         print(segueString)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        emailAddressField.keyboardType = .emailAddress
+        phoneNumberOneField.keyboardType = .numberPad
+        phoneNumberTwoField.keyboardType = .numberPad
+        currentPointsField.keyboardType = .numberPad
+        fullNameField.keyboardType = .default
+    }
+    
     
     func createNewCustomer(){
         /*
