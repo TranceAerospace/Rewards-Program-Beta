@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tablieview: UITableView!
     
     
-    var coreCustomers : [NSManagedObject] = []
-    var filteredData : [NSManagedObject] = []
+    var coreCustomers : [Customers] = []
+    var filteredData : [Customers] = []
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         
         if (segue.identifier == "toEditFromMaster"){
             let s = segue.destination as! EditViewController
-            s.selectedIndex = sender as! Int
+            s.selectedCustomer = sender as? Customers
             s.navigationItem.title = "Edit Customer Data"
         }
         
@@ -92,7 +92,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toEditFromMaster", sender: indexPath.row)
+        self.performSegue(withIdentifier: "toEditFromMaster", sender: filteredData[indexPath.row])
+//        self.performSegue(withIdentifier: "toEditFromMaster", sender: indexPath.row)
         
         //Removes highlighting. 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -124,12 +125,10 @@ extension ViewController : UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         filteredData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (object : NSManagedObject) -> Bool in
             // Returns any customer where the name contains the letters being searched, anywhere in the name
             return (object.value(forKey: "name") as? String)?.range(of: searchText, options: .caseInsensitive) != nil
-            // Returns only customers where the text to be searched matches the name, starting from the beginning
-//            var nameSearch = searchText.lowercased();
-//            return (((object.value(forKey: "name") as? String)?.lowercased().hasPrefix(nameSearch))!)
         })
         filteredData.sort { (objectNameOne, objectNameTwo) -> Bool in
             ((objectNameOne.value(forKey: "name") as? String)!.lowercased() < (objectNameTwo.value(forKey: "name") as? String)!.lowercased())

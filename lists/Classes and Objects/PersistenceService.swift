@@ -60,9 +60,9 @@ class PersistenceService {
             }
         }
     }
-    static func getCustomers() -> [NSManagedObject] {
-        var coreCustomers : [NSManagedObject] = []
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Customers")
+    static func getCustomers() -> [Customers] {
+        var coreCustomers : [Customers] = []
+        let fetchRequest = NSFetchRequest<Customers>(entityName: "Customers")
         do {
             coreCustomers = try PersistenceService.context.fetch(fetchRequest)
         } catch let error as NSError {
