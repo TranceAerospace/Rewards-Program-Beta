@@ -68,7 +68,7 @@ class AddViewController: UIViewController {
         //Save to core data
         createNewCustomer()
         //return to root controller
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     /*

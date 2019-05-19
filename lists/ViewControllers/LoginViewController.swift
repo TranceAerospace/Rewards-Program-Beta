@@ -9,13 +9,17 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var woodBGImageView: UIImageView!
+    
+    @IBOutlet weak var userNameInputField: UITextField!
+    @IBOutlet weak var passwordInputField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        
+    @IBAction func loginTapped(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toMasterFromLogin", sender: nil)
     }
     
 

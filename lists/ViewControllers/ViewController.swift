@@ -50,6 +50,10 @@ class ViewController: UIViewController {
             s.segueString = "Add View Controller"
         }
     }
+    @IBAction func logOutTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
  // Core Data
 extension ViewController {
@@ -87,6 +91,19 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         //Removes highlighting. 
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete){
+            print("Delete Selected")
+            PersistenceService.context.delete(coreCustomers[indexPath.row])
+            PersistenceService.saveContext()
+            coreCustomers = PersistenceService.getCustomers()
+            tableView.reloadData()
+        }
     }
 }
 

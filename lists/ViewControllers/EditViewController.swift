@@ -96,8 +96,7 @@ class EditViewController: UIViewController {
         updateFields()
     }
     @IBAction func saveTapped(_ sender: Any) {
-        
-    navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     /*
