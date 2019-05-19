@@ -33,10 +33,11 @@ class CustomTableViewCell: UITableViewCell {
                 print("value is nil")
                 return
         }
-        self.customCellLabel.text = email as? String
-        self.nameLabel.text = name as? String
+        self.customCellLabel.text = email as? String ?? "Empty Email Address"
+        self.nameLabel.text = name as? String ?? "Empty Name"
         self.pointsLabel.text = "\(points)"
-
+        self.contentView.layer.borderColor = UIColor.black.cgColor
+        self.contentView.layer.borderWidth = 0.3
     }
 
 }

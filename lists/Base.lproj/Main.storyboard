@@ -27,35 +27,86 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellRI" id="kLD-Um-rTc" customClass="CustomTableViewCell" customModule="lists" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="1024" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellRI" rowHeight="100" id="kLD-Um-rTc" customClass="CustomTableViewCell" customModule="lists" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kLD-Um-rTc" id="dq7-O2-jWg">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="dEk-oA-Obb">
-                                                    <rect key="frame" x="15" y="0.0" width="334" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="dEk-oA-Obb">
+                                                    <rect key="frame" x="154" y="43" width="334" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="334" id="E8M-az-4TV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-um-IVI">
-                                                    <rect key="frame" x="357" y="0.0" width="334" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-um-IVI">
+                                                    <rect key="frame" x="148" y="2" width="334" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="334" id="gQD-d9-Pme"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Num Of Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="r1N-vw-XcF">
-                                                    <rect key="frame" x="690" y="0.0" width="334" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVw-ok-biL">
+                                                    <rect key="frame" x="15" y="11" width="65" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="8dK-Ha-ogg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Address :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-qr-ohv">
+                                                    <rect key="frame" x="15" y="52" width="131" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="131" id="uaf-bO-g41"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Points :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzA-5l-xKZ">
+                                                    <rect key="frame" x="490" y="11" width="133" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="133" id="hEV-Mw-AEl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Num Of Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="r1N-vw-XcF">
+                                                    <rect key="frame" x="631" y="2" width="334" height="40"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sJ1-um-IVI" firstAttribute="baseline" secondItem="r1N-vw-XcF" secondAttribute="baseline" id="16l-Vm-np3"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="firstBaseline" secondItem="zzA-5l-xKZ" secondAttribute="firstBaseline" id="3tY-li-ujR"/>
+                                                <constraint firstItem="zzA-5l-xKZ" firstAttribute="leading" secondItem="sJ1-um-IVI" secondAttribute="trailing" constant="8" symbolic="YES" id="55b-o4-ruc"/>
+                                                <constraint firstItem="P1O-qr-ohv" firstAttribute="centerY" secondItem="dEk-oA-Obb" secondAttribute="centerY" id="8Lv-3B-Hyr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dEk-oA-Obb" secondAttribute="bottom" constant="6" id="Er4-tx-ii7"/>
+                                                <constraint firstItem="P1O-qr-ohv" firstAttribute="top" secondItem="RVw-ok-biL" secondAttribute="bottom" constant="18" id="FNG-sj-Wxp"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="leading" secondItem="P1O-qr-ohv" secondAttribute="leading" id="H2F-ZA-Ftc"/>
+                                                <constraint firstItem="sJ1-um-IVI" firstAttribute="firstBaseline" secondItem="r1N-vw-XcF" secondAttribute="firstBaseline" id="LIr-dm-izN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="r1N-vw-XcF" secondAttribute="trailing" constant="39" id="QCT-n5-8n5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="r1N-vw-XcF" secondAttribute="bottom" constant="47" id="TgE-ZC-nbc"/>
+                                                <constraint firstItem="sJ1-um-IVI" firstAttribute="leading" secondItem="RVw-ok-biL" secondAttribute="trailing" constant="68" id="VJb-y5-mFI"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="top" secondItem="dq7-O2-jWg" secondAttribute="topMargin" id="Xv1-3I-KKh"/>
+                                                <constraint firstItem="dEk-oA-Obb" firstAttribute="top" secondItem="sJ1-um-IVI" secondAttribute="bottom" constant="1" id="YVs-ab-5B4"/>
+                                                <constraint firstItem="sJ1-um-IVI" firstAttribute="top" secondItem="dq7-O2-jWg" secondAttribute="topMargin" constant="-9" id="b7Z-Fi-7Gy"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="centerY" secondItem="sJ1-um-IVI" secondAttribute="centerY" id="bzL-m1-Vfz"/>
+                                                <constraint firstItem="r1N-vw-XcF" firstAttribute="leading" secondItem="zzA-5l-xKZ" secondAttribute="trailing" constant="8" symbolic="YES" id="cBP-se-SA8"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="baseline" secondItem="zzA-5l-xKZ" secondAttribute="baseline" id="eXr-O5-7K7"/>
+                                                <constraint firstItem="RVw-ok-biL" firstAttribute="leading" secondItem="dq7-O2-jWg" secondAttribute="leadingMargin" constant="-5" id="ero-5v-Ntb"/>
+                                                <constraint firstItem="dEk-oA-Obb" firstAttribute="leading" secondItem="P1O-qr-ohv" secondAttribute="trailing" constant="8" symbolic="YES" id="x8S-UK-aNG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="customCellLabel" destination="dEk-oA-Obb" id="g4h-zu-yc2"/>
@@ -88,13 +139,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="MvS-1X-Vlz" id="Hmz-0H-1ek"/>
                         <outlet property="tablieview" destination="55J-d7-0iK" id="ZtW-11-WSH"/>
                         <segue destination="JHK-AD-wew" kind="show" identifier="toEditFromMaster" id="pSI-pm-oGp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="116"/>
+            <point key="canvasLocation" x="853.7109375" y="115.625"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="89G-Nf-ulq">

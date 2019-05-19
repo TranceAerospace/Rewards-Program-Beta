@@ -14,7 +14,8 @@ class EditViewController: UIViewController {
     var selectedIndex : Int = 0
     var currentCustomers : [NSManagedObject] = []
     
-    var tempCust : Customer = Customer(customerFullName: "", customerFirstPhoneNumber: "", customerSecondPhoneNumber: "", currentNumberOfPoints: 0, customerEmailAddress: "")
+//    var tempCust : Customer = Customer(customerFullName: "", customerFirstPhoneNumber: "", customerSecondPhoneNumber: "", currentNumberOfPoints: 0, customerEmailAddress: "")
+
     @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var phoneOneField: UITextField!
@@ -96,6 +97,11 @@ class EditViewController: UIViewController {
         updateFields()
     }
     @IBAction func saveTapped(_ sender: Any) {
+        currentCustomers[selectedIndex].setValue(fullNameField.text, forKey: "name")
+        currentCustomers[selectedIndex].setValue(emailAddressField.text, forKey: "emailAddress")
+        currentCustomers[selectedIndex].setValue(phoneOneField.text, forKey: "phoneNumberOne")
+        currentCustomers[selectedIndex].setValue(phoneTwoField.text, forKey: "phoneNumberTwo")
+        PersistenceService.saveContext()
         navigationController?.popViewController(animated: true)
     }
     
