@@ -135,6 +135,56 @@ extension ViewController : UISearchBarDelegate {
         filteredData.sort { (customerOne, customerTwo) -> Bool in
             return (customerOne.name)!.lowercased() < (customerTwo.name)!.lowercased()
         }
+//        var phoneMatchCount = 0
+//        //Filteres based on phone number
+//        let phoneData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
+//            if(customer.phoneNumberOne?.range(of: searchText) != nil){
+//                phoneMatchCount += 1;
+//                print("Phone Matches : \(phoneMatchCount)");
+//                return customer.phoneNumberOne?.range(of: searchText) != nil
+//
+//            };
+//            return false
+//        })
+//
+//        var nameMatchCount = 0
+//        let nameData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
+//            if(customer.name?.range(of: searchText, options: .caseInsensitive) != nil){
+//                nameMatchCount += 1;
+//                print("Name Matches : \(nameMatchCount)");
+//                return customer.name?.range(of: searchText) != nil
+//
+//            };
+//            return false
+//        })
+//
+//        var emailMatchCount = 0
+//        let emailData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
+//            if(customer.emailAddress?.range(of: searchText, options: .caseInsensitive) != nil){
+//                emailMatchCount += 1;
+//                print("Email Matches : \(emailMatchCount)");
+//                return customer.emailAddress?.range(of: searchText) != nil
+//
+//            };
+//            return false
+//        })
+//
+////        if(phoneMatchCount > nameMatchCount){
+////            filteredData = phoneData
+////        } else {
+////            filteredData = nameData
+////        }
+//        if(nameMatchCount > emailMatchCount && phoneMatchCount == 0){
+//            filteredData = nameData
+//        }
+//        if(emailMatchCount > nameMatchCount && phoneMatchCount == 0){
+//            filteredData = emailData
+//        }
+//        if(phoneMatchCount > nameMatchCount && nameMatchCount == emailMatchCount){
+//            filteredData = phoneData
+//        } else {
+//            filteredData = coreCustomers
+//        }
         tablieview.reloadData()
     }
 }
