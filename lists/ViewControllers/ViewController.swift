@@ -125,13 +125,15 @@ extension ViewController : UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filteredData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (object : NSManagedObject) -> Bool in
-            // Returns any customer where the name contains the letters being searched, anywhere in the name
-            return (object.value(forKey: "name") as? String)?.range(of: searchText, options: .caseInsensitive) != nil
+
+        // Filters based on name
+        filteredData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
+            return customer.name?.range(of: searchText, options: .caseInsensitive) != nil
         })
-        filteredData.sort { (objectNameOne, objectNameTwo) -> Bool in
-            ((objectNameOne.value(forKey: "name") as? String)!.lowercased() < (objectNameTwo.value(forKey: "name") as? String)!.lowercased())
+        //Sorts the filtered data alphabetically.
+//
+        filteredData.sort { (customerOne, customerTwo) -> Bool in
+            return (customerOne.name)!.lowercased() < (customerTwo.name)!.lowercased()
         }
         tablieview.reloadData()
     }
