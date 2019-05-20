@@ -21,13 +21,37 @@ class EditViewController: UIViewController {
     @IBOutlet weak var phoneTwoField: UITextField!
     @IBOutlet weak var currentPointsField: UITextField!
     @IBOutlet weak var addAmountField: UITextField!
+        @IBOutlet weak var addButtonOutlet: UIButton!
+    @IBOutlet weak var purchaseTableView: UITableView!
+    
+    
+    func createAlert() -> UIAlertController{
+        let alert = UIAlertController(title: "Upgrade To Paid For This Feature", message: "Enjoy the perks of being a premium client", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Nah I'm good", style: .cancel, handler: { (action) in
+            print("Scumbag")
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Yes, I want to Grow", style: .default, handler: { (action) in
+            print("Send to App store")
+            alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        return alert
+    }
+
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        purchaseTableView.delegate = self
+        purchaseTableView.dataSource = self
         //currentCustomers = PersistenceService.getCustomers()
         // Do any additional setup after loading the view.
         updateFields()
+        purchaseTableView.rowHeight = 100
+        purchaseTableView.layer.borderWidth = 1
     }
     override func viewWillAppear(_ animated: Bool) {
         emailAddressField.keyboardType = .emailAddress
@@ -36,6 +60,9 @@ class EditViewController: UIViewController {
         currentPointsField.keyboardType = .numberPad
         fullNameField.keyboardType = .default
         addAmountField.keyboardType = .numberPad
+        purchaseTableView.layer.borderWidth = 2
+//        addButtonOutlet.layer.borderWidth = 1
+        
     }
     func updateFields(){
         PersistenceService.saveContext()
@@ -47,32 +74,6 @@ class EditViewController: UIViewController {
         currentPointsField.text = "\(selectedCustomer.numOfPoints)"
     }
     
-    @IBAction func minusOneTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints - 1
-        updateFields()
-        
-    }
-    @IBAction func minusFiveTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints - 5
-        updateFields()
-    }
-    
-    @IBAction func minusTenTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints - 10
-        updateFields()
-    }
-    @IBAction func plusOneTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints + 1
-        updateFields()
-    }
-    @IBAction func plusFiveTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints + 5
-        updateFields()
-    }
-    @IBAction func plusTenTapped(_ sender: Any) {
-        selectedCustomer.numOfPoints = selectedCustomer.numOfPoints + 10
-        updateFields()
-    }
     @IBAction func resetPointsTapped(_ sender: Any) {
         selectedCustomer.numOfPoints = 0
         updateFields()
@@ -89,7 +90,9 @@ class EditViewController: UIViewController {
         PersistenceService.saveContext()
         navigationController?.popViewController(animated: true)
     }
+
     @IBAction func addReceiptTapped(_ sender: Any) {
+        
         guard let tempAmmount = Int64(addAmountField.text!) else {
             print("add amount is nil")
             return
@@ -99,14 +102,31 @@ class EditViewController: UIViewController {
         addAmountField.text = ""
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func addNewTransactionTapped(_ sender: Any) {
+        // Present a modal where the user can input a transaction.
+        present(createAlert(), animated: true
+            , completion: nil)
+        
+    }
+    
+}
+
+
+extension EditViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = purchaseTableView.dequeueReusableCell(withIdentifier: "purchaseCell") as! PurchaseTableViewCell
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        self.present(createAlert(), animated: true, completion: nil)
+        purchaseTableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }

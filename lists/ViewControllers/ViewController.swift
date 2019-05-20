@@ -63,7 +63,7 @@ extension ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tablieview.reloadData()
-        self.navigationItem.title = "Pickle Me Pete's Rewards Program"
+        self.navigationItem.title = "Customers Ordered By Most Spent"
         coreCustomers = PersistenceService.getCustomers()
         filteredData = coreCustomers
         filteredData.sort { (customerOne, customerTwo) -> Bool in
