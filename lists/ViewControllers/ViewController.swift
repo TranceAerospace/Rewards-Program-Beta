@@ -66,6 +66,9 @@ extension ViewController {
         self.navigationItem.title = "Pickle Me Pete's Rewards Program"
         coreCustomers = PersistenceService.getCustomers()
         filteredData = coreCustomers
+        filteredData.sort { (customerOne, customerTwo) -> Bool in
+            return (customerOne.numOfPoints) > (customerTwo.numOfPoints)
+        }
         tablieview.reloadData()
     }
     
@@ -127,64 +130,19 @@ extension ViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
         // Filters based on name
+//        filteredData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
+//            return (customer.name?.range(of: searchText, options: .caseInsensitive) != nil)
+//        })
+        
         filteredData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
-            return customer.name?.range(of: searchText, options: .caseInsensitive) != nil
+            return (customer.name?.range(of: searchText, options: .caseInsensitive) != nil || customer.emailAddress?.range(of: searchText, options: .caseInsensitive) != nil || customer.phoneNumberOne?.range(of: searchText) != nil)
         })
-        //Sorts the filtered data alphabetically.
+        //Sorts the filtered data based on purchase amount.
 //
         filteredData.sort { (customerOne, customerTwo) -> Bool in
-            return (customerOne.name)!.lowercased() < (customerTwo.name)!.lowercased()
+            return (customerOne.numOfPoints) > (customerTwo.numOfPoints)
         }
-//        var phoneMatchCount = 0
-//        //Filteres based on phone number
-//        let phoneData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
-//            if(customer.phoneNumberOne?.range(of: searchText) != nil){
-//                phoneMatchCount += 1;
-//                print("Phone Matches : \(phoneMatchCount)");
-//                return customer.phoneNumberOne?.range(of: searchText) != nil
-//
-//            };
-//            return false
-//        })
-//
-//        var nameMatchCount = 0
-//        let nameData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
-//            if(customer.name?.range(of: searchText, options: .caseInsensitive) != nil){
-//                nameMatchCount += 1;
-//                print("Name Matches : \(nameMatchCount)");
-//                return customer.name?.range(of: searchText) != nil
-//
-//            };
-//            return false
-//        })
-//
-//        var emailMatchCount = 0
-//        let emailData = searchText.isEmpty ? coreCustomers : coreCustomers.filter({ (customer:Customers) -> Bool in
-//            if(customer.emailAddress?.range(of: searchText, options: .caseInsensitive) != nil){
-//                emailMatchCount += 1;
-//                print("Email Matches : \(emailMatchCount)");
-//                return customer.emailAddress?.range(of: searchText) != nil
-//
-//            };
-//            return false
-//        })
-//
-////        if(phoneMatchCount > nameMatchCount){
-////            filteredData = phoneData
-////        } else {
-////            filteredData = nameData
-////        }
-//        if(nameMatchCount > emailMatchCount && phoneMatchCount == 0){
-//            filteredData = nameData
-//        }
-//        if(emailMatchCount > nameMatchCount && phoneMatchCount == 0){
-//            filteredData = emailData
-//        }
-//        if(phoneMatchCount > nameMatchCount && nameMatchCount == emailMatchCount){
-//            filteredData = phoneData
-//        } else {
-//            filteredData = coreCustomers
-//        }
+
         tablieview.reloadData()
     }
 }

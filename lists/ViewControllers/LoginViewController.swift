@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func loginTapped(_ sender: UITapGestureRecognizer) {
+    @IBAction func proTapped(_ sender: Any) {
         performSegue(withIdentifier: "toMasterFromLogin", sender: nil)
     }
     

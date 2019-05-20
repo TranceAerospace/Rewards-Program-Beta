@@ -20,7 +20,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var phoneOneField: UITextField!
     @IBOutlet weak var phoneTwoField: UITextField!
     @IBOutlet weak var currentPointsField: UITextField!
-    
+    @IBOutlet weak var addAmountField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,7 @@ class EditViewController: UIViewController {
         phoneTwoField.keyboardType = .numberPad
         currentPointsField.keyboardType = .numberPad
         fullNameField.keyboardType = .default
+        addAmountField.keyboardType = .numberPad
     }
     func updateFields(){
         PersistenceService.saveContext()
@@ -87,6 +88,15 @@ class EditViewController: UIViewController {
         
         PersistenceService.saveContext()
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func addReceiptTapped(_ sender: Any) {
+        guard let tempAmmount = Int64(addAmountField.text!) else {
+            print("add amount is nil")
+            return
+        }
+        selectedCustomer.numOfPoints += tempAmmount
+        updateFields()
+        addAmountField.text = ""
     }
     
     /*
