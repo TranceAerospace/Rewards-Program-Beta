@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SendEmailViewController: UIViewController {
+class SendEmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var popUpView: UIView!
     
@@ -45,6 +46,14 @@ class SendEmailViewController: UIViewController {
 
     @IBAction func sendEmailTapped(_ sender: Any) {
         // Make API Call to send emall and dismiss
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            //mail.setToRecipients()
+        }
+        
+        
         
         let alert = UIAlertController(title: "Upgrade To Paid For This Feature", message: "Enjoy the perks of being a premium client", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Nah I'm good", style: .cancel, handler: { (action) in

@@ -21,7 +21,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var phoneTwoField: UITextField!
     @IBOutlet weak var currentPointsField: UITextField!
     @IBOutlet weak var addAmountField: UITextField!
-        @IBOutlet weak var addButtonOutlet: UIButton!
+    @IBOutlet weak var addButtonOutlet: UIButton!
     @IBOutlet weak var purchaseTableView: UITableView!
     
     
