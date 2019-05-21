@@ -13,6 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var customCellLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,17 +26,20 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     // This function sets the custom cells labels based off of the customer object that is passed in
-    func setLabels(data:NSManagedObject){
+    func setLabels(data:Customers){
         //Email
         
-        guard let email = data.value(forKey: "emailAddress"), let name = data.value(forKey: "name"), let points = data.value(forKey: "numOfPoints")
+        guard let email = data.emailAddress, let name = data.name, let phone = data.phoneNumberOne
             else {
                 print("value is nil")
                 return
         }
+        let points = data.numOfPoints
+        
         self.customCellLabel.text = email as? String ?? "Empty Email Address"
         self.nameLabel.text = name as? String ?? "Empty Name"
         self.pointsLabel.text = "\(points)"
+        self.phoneNumberLabel.text = phone
         self.contentView.layer.borderColor = UIColor.black.cgColor
         self.contentView.layer.borderWidth = 0.3
     }

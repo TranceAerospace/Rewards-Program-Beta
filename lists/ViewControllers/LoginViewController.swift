@@ -10,27 +10,27 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var userNameInputField: UITextField!
-    @IBOutlet weak var passwordInputField: UITextField!
     
+    var continueGesture = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction func proTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toMasterFromLogin", sender: nil)
+    
+    @IBOutlet weak var continueView: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        continueGesture = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.continueTapped(_:)))
+        continueGesture.numberOfTapsRequired = 1
+        continueGesture.numberOfTouchesRequired = 1
+        continueView.addGestureRecognizer(continueGesture)
+        continueView.isUserInteractionEnabled = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc @IBAction func continueTapped(_ sender: UITapGestureRecognizer) {
+        
+        print("Button pressed")
+        self.performSegue(withIdentifier: "toMasterFromLogin", sender: nil)
     }
-    */
-
+    
 }

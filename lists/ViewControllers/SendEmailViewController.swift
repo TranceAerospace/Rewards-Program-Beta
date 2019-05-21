@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import MessageUI
 
-class SendEmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class SendEmailViewController: UIViewController {
 
     @IBOutlet weak var popUpView: UIView!
     
@@ -17,6 +16,7 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var emailSubjectField: UITextField!
     @IBOutlet weak var segmentedControlOutlet: UISegmentedControl!
     var actionMessage : String?
+    @IBOutlet weak var textContentViewOutlet: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,9 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
         } else {
             actionMessage = "Text Message Sent"
         }
+        emailSubjectField.layer.cornerRadius = 10
+        textContentViewOutlet.layer.cornerRadius = 10
+        emailSubjectField.layer.cornerRadius = 10 
     }
     
    
@@ -46,14 +49,6 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
 
     @IBAction func sendEmailTapped(_ sender: Any) {
         // Make API Call to send emall and dismiss
-        
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            //mail.setToRecipients()
-        }
-        
-        
         
         let alert = UIAlertController(title: "Upgrade To Paid For This Feature", message: "Enjoy the perks of being a premium client", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Nah I'm good", style: .cancel, handler: { (action) in

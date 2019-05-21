@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F1E2A3E22935AD000E4C08B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A3A22935AD000E4C08B /* Customer.swift */; };
-		9F1E2A3F22935AD000E4C08B /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A3B22935AD000E4C08B /* PersistenceService.swift */; };
-		9F1E2A4022935AD000E4C08B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A3C22935AD000E4C08B /* CustomTableViewCell.swift */; };
-		9F1E2A4122935AD000E4C08B /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A3D22935AD000E4C08B /* PurchaseTableViewCell.swift */; };
-		9F1E2A4522935B2C00E4C08B /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A4422935B2C00E4C08B /* SendEmailViewController.swift */; };
-		9F1E2A4722935B3100E4C08B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A4622935B3100E4C08B /* LoginViewController.swift */; };
-		9F1E2A4C22935B5D00E4C08B /* Customers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A4822935B5D00E4C08B /* Customers+CoreDataProperties.swift */; };
-		9F1E2A4D22935B5D00E4C08B /* Lists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A4922935B5D00E4C08B /* Lists.xcdatamodeld */; };
-		9F1E2A4E22935B5D00E4C08B /* Customers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E2A4B22935B5D00E4C08B /* Customers+CoreDataClass.swift */; };
+		9F678CCA22938D6700D13C4D /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CC822938D6700D13C4D /* SendEmailViewController.swift */; };
+		9F678CCB22938D6700D13C4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CC922938D6700D13C4D /* LoginViewController.swift */; };
+		9F678CD022938D8500D13C4D /* Customers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CCC22938D8500D13C4D /* Customers+CoreDataClass.swift */; };
+		9F678CD122938D8500D13C4D /* Customers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CCD22938D8500D13C4D /* Customers+CoreDataProperties.swift */; };
+		9F678CD222938D8500D13C4D /* Lists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CCE22938D8500D13C4D /* Lists.xcdatamodeld */; };
+		9F678CD422938D9200D13C4D /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F678CD322938D9200D13C4D /* PurchaseTableViewCell.swift */; };
 		EF2EC5872282F29100CBCD49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5862282F29100CBCD49 /* AppDelegate.swift */; };
 		EF2EC5892282F29100CBCD49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5882282F29100CBCD49 /* ViewController.swift */; };
 		EF2EC58C2282F29100CBCD49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2EC58A2282F29100CBCD49 /* Main.storyboard */; };
@@ -23,6 +20,9 @@
 		EF2EC5912282F29200CBCD49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2EC58F2282F29200CBCD49 /* LaunchScreen.storyboard */; };
 		EF2EC59C2282F29200CBCD49 /* listsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC59B2282F29200CBCD49 /* listsTests.swift */; };
 		EF2EC5A72282F29200CBCD49 /* listsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5A62282F29200CBCD49 /* listsUITests.swift */; };
+		EF2EC5B52282FCCC00CBCD49 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */; };
+		EF2EC5B7228312E100CBCD49 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC5B6228312E100CBCD49 /* Customer.swift */; };
+		EF813021228E1F0A00A65EDB /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF813020228E1F0A00A65EDB /* PersistenceService.swift */; };
 		EF813027228E2BC500A65EDB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF813026228E2BC500A65EDB /* AddViewController.swift */; };
 		EFE7931122875FB0006DF37B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7931022875FB0006DF37B /* EditViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,15 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F1E2A3A22935AD000E4C08B /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		9F1E2A3B22935AD000E4C08B /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		9F1E2A3C22935AD000E4C08B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		9F1E2A3D22935AD000E4C08B /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
-		9F1E2A4422935B2C00E4C08B /* SendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
-		9F1E2A4622935B3100E4C08B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9F1E2A4822935B5D00E4C08B /* Customers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Customers+CoreDataProperties.swift"; path = "Core Data/Customers+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9F1E2A4A22935B5D00E4C08B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		9F1E2A4B22935B5D00E4C08B /* Customers+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Customers+CoreDataClass.swift"; path = "Core Data/Customers+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9F678CC822938D6700D13C4D /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
+		9F678CC922938D6700D13C4D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F678CCC22938D8500D13C4D /* Customers+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Customers+CoreDataClass.swift"; path = "Core Data/Customers+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9F678CCD22938D8500D13C4D /* Customers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Customers+CoreDataProperties.swift"; path = "Core Data/Customers+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9F678CCF22938D8500D13C4D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9F678CD322938D9200D13C4D /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
 		EF2EC5832282F29100CBCD49 /* lists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2EC5862282F29100CBCD49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2EC5882282F29100CBCD49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +64,9 @@
 		EF2EC5A22282F29200CBCD49 /* listsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = listsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2EC5A62282F29200CBCD49 /* listsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listsUITests.swift; sourceTree = "<group>"; };
 		EF2EC5A82282F29200CBCD49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		EF2EC5B6228312E100CBCD49 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		EF813020228E1F0A00A65EDB /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		EF813026228E2BC500A65EDB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		EFE7931022875FB0006DF37B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,9 +119,9 @@
 		EF2EC5852282F29100CBCD49 /* lists */ = {
 			isa = PBXGroup;
 			children = (
-				9F1E2A4B22935B5D00E4C08B /* Customers+CoreDataClass.swift */,
-				9F1E2A4822935B5D00E4C08B /* Customers+CoreDataProperties.swift */,
-				9F1E2A4922935B5D00E4C08B /* Lists.xcdatamodeld */,
+				9F678CCC22938D8500D13C4D /* Customers+CoreDataClass.swift */,
+				9F678CCD22938D8500D13C4D /* Customers+CoreDataProperties.swift */,
+				9F678CCE22938D8500D13C4D /* Lists.xcdatamodeld */,
 				EF2EC58A2282F29100CBCD49 /* Main.storyboard */,
 				EF2EC5862282F29100CBCD49 /* AppDelegate.swift */,
 				EF813029228E2BEA00A65EDB /* Classes and Objects */,
@@ -154,11 +154,11 @@
 		EF813028228E2BD800A65EDB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F1E2A4622935B3100E4C08B /* LoginViewController.swift */,
-				9F1E2A4422935B2C00E4C08B /* SendEmailViewController.swift */,
 				EF2EC5882282F29100CBCD49 /* ViewController.swift */,
 				EFE7931022875FB0006DF37B /* EditViewController.swift */,
 				EF813026228E2BC500A65EDB /* AddViewController.swift */,
+				9F678CC922938D6700D13C4D /* LoginViewController.swift */,
+				9F678CC822938D6700D13C4D /* SendEmailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,10 +166,10 @@
 		EF813029228E2BEA00A65EDB /* Classes and Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9F1E2A3A22935AD000E4C08B /* Customer.swift */,
-				9F1E2A3B22935AD000E4C08B /* PersistenceService.swift */,
-				9F1E2A3C22935AD000E4C08B /* CustomTableViewCell.swift */,
-				9F1E2A3D22935AD000E4C08B /* PurchaseTableViewCell.swift */,
+				EF2EC5B6228312E100CBCD49 /* Customer.swift */,
+				EF2EC5B42282FCCC00CBCD49 /* CustomTableViewCell.swift */,
+				EF813020228E1F0A00A65EDB /* PersistenceService.swift */,
+				9F678CD322938D9200D13C4D /* PurchaseTableViewCell.swift */,
 			);
 			path = "Classes and Objects";
 			sourceTree = "<group>";
@@ -305,19 +305,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F678CCB22938D6700D13C4D /* LoginViewController.swift in Sources */,
 				EF813027228E2BC500A65EDB /* AddViewController.swift in Sources */,
-				9F1E2A3F22935AD000E4C08B /* PersistenceService.swift in Sources */,
+				EF813021228E1F0A00A65EDB /* PersistenceService.swift in Sources */,
+				9F678CD422938D9200D13C4D /* PurchaseTableViewCell.swift in Sources */,
+				9F678CCA22938D6700D13C4D /* SendEmailViewController.swift in Sources */,
 				EFE7931122875FB0006DF37B /* EditViewController.swift in Sources */,
+				9F678CD222938D8500D13C4D /* Lists.xcdatamodeld in Sources */,
+				EF2EC5B52282FCCC00CBCD49 /* CustomTableViewCell.swift in Sources */,
 				EF2EC5892282F29100CBCD49 /* ViewController.swift in Sources */,
 				EF2EC5872282F29100CBCD49 /* AppDelegate.swift in Sources */,
-				9F1E2A4D22935B5D00E4C08B /* Lists.xcdatamodeld in Sources */,
-				9F1E2A3E22935AD000E4C08B /* Customer.swift in Sources */,
-				9F1E2A4522935B2C00E4C08B /* SendEmailViewController.swift in Sources */,
-				9F1E2A4122935AD000E4C08B /* PurchaseTableViewCell.swift in Sources */,
-				9F1E2A4722935B3100E4C08B /* LoginViewController.swift in Sources */,
-				9F1E2A4E22935B5D00E4C08B /* Customers+CoreDataClass.swift in Sources */,
-				9F1E2A4C22935B5D00E4C08B /* Customers+CoreDataProperties.swift in Sources */,
-				9F1E2A4022935AD000E4C08B /* CustomTableViewCell.swift in Sources */,
+				EF2EC5B7228312E100CBCD49 /* Customer.swift in Sources */,
+				9F678CD122938D8500D13C4D /* Customers+CoreDataProperties.swift in Sources */,
+				9F678CD022938D8500D13C4D /* Customers+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,12 +648,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9F1E2A4922935B5D00E4C08B /* Lists.xcdatamodeld */ = {
+		9F678CCE22938D8500D13C4D /* Lists.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9F1E2A4A22935B5D00E4C08B /* Model.xcdatamodel */,
+				9F678CCF22938D8500D13C4D /* Model.xcdatamodel */,
 			);
-			currentVersion = 9F1E2A4A22935B5D00E4C08B /* Model.xcdatamodel */;
+			currentVersion = 9F678CCF22938D8500D13C4D /* Model.xcdatamodel */;
 			name = Lists.xcdatamodeld;
 			path = "Core Data/Lists.xcdatamodeld";
 			sourceTree = "<group>";

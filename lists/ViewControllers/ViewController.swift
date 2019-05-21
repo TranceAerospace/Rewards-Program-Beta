@@ -69,6 +69,7 @@ extension ViewController {
         filteredData.sort { (customerOne, customerTwo) -> Bool in
             return (customerOne.numOfPoints) > (customerTwo.numOfPoints)
         }
+        tablieview.layer.cornerRadius = 10
         tablieview.reloadData()
     }
     
